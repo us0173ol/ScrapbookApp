@@ -14,28 +14,28 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <Button
-        android:id="@+id/add_comment_button"
+        android:id="@+id/search_comments_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Comment"/>
+        android:text="Search Comments"/>
     <EditText
         android:id="@+id/search_comments_edittext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/add_comment_button"
+        android:layout_toRightOf="@+id/search_comments_button"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:text="Search Comments"
         android:textAlignment="center"/>
 
     <Button
-        android:id="@+id/add_picture_button"
+        android:id="@+id/take_picture_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/add_comment_button"
+        android:layout_below="@+id/search_comments_button"
         android:text="Add Picture"
-        android:layout_alignRight="@+id/add_comment_button"
-        android:layout_alignEnd="@+id/add_comment_button"
+        android:layout_alignRight="@+id/search_comments_button"
+        android:layout_alignEnd="@+id/search_comments_button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
 
@@ -46,7 +46,20 @@
         android:scaleType="centerInside"
         android:background="@android:color/darker_gray"
         android:cropToPadding="true"
-        android:layout_below="@+id/add_picture_button"/>
+        android:layout_below="@+id/take_picture_button"/>
+    <EditText
+        android:id="@+id/comments_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/camera_picture"
+        android:layout_below="@+id/take_picture_button"/>
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comments_edit_text"
+        android:layout_toRightOf="@id/camera_picture"
+        android:text="Add"/>
 
 </RelativeLayout>
 

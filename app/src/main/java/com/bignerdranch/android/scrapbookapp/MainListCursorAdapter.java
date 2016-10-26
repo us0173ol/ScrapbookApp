@@ -20,9 +20,10 @@ public class MainListCursorAdapter extends CursorAdapter{
     private static final String TAG = "MAIN LIST CURSOR ADAPTER";
     ItemContentsChangedListener mItemContentsChangedListener;
 
-    private static final int PICTURE_COL = 0;
+    private static final int ID_COL = 0;
+    private static final int PICTURE_COL = 2;
     private static final int COMMENTS_COL = 1;
-//    private static final int
+    private static final int TAGS_COL = 3;
 //    private static final int
 //    private static final int
 
@@ -43,15 +44,18 @@ public class MainListCursorAdapter extends CursorAdapter{
         return v;
     }
     public void bindView(View view, Context context, final Cursor cursor){
-        //TODO FINISH bindView 
-        ImageView pictureTaken = (ImageView) view.findViewById(R.id.item_list_picture_image_view);
+        //TODO FINISH bindView
+        //ImageView pictureTaken = (ImageView) view.findViewById(R.id.item_list_picture_image_view);
         TextView commentsMade = (TextView) view.findViewById(R.id.item_list_comment_text_view);
 
+
         commentsMade.setText(cursor.getString(COMMENTS_COL));
+
+        final int object_id = cursor.getInt(ID_COL);
 
     }
 
     interface ItemContentsChangedListener {
-        void notifyItemsChanged(Image pictures, String newComments);
+        void notifyItemsChanged(int objectID, String newComments);
     }
 }
